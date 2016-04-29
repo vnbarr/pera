@@ -3,10 +3,10 @@ require_relative "../lib/boat.rb"
 
 describe Grid do
 
-	it "should return 10x10 as widthxheight" do
+	it "should return 3x3 as widthxheight" do
 		grid = Grid.new
-		grid.get_width.should == 10
-		grid.get_height.should == 10
+		grid.get_width.should == 3
+		grid.get_height.should == 3
 	end
 	
 	it "should have no boats when creating new one" do
@@ -33,11 +33,28 @@ describe Grid do
 		grid.is_position_occupied(2,2).should == true
 	end
 
-	it "should " do
+	it "should hit a boat on position 2,2" do
 		grid = Grid.new
 		boat = Boat.new
 		grid.add_boat_on_position(2,2,boat)
 		was_a_hit = grid.bombard_position(2,2)
 		was_a_hit.should == true
 	end
+
+	it "should show you win when the last boat is destroyed" do
+		grid = Grid.new
+		boat1 = Boat.new
+		grid.add_boat_on_position(2,2,boat1)
+		grid.bombard_position(2,2)
+		grid.is_game_over.should == true
+	end
+
+	it "should failed if dont hit a boat on position 2,2" do
+		grid = Grid.new
+		boat = Boat.new
+		grid.add_boat_on_position(2,2,boat)
+		was_a_hit = grid.bombard_position(2,2)
+		was_a_hit.should == false
+    end
+
 end

@@ -1,3 +1,5 @@
 webrat.log
 coverage/
 .idea
+.DS_Store
+.bundle

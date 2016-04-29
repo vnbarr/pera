@@ -31,6 +31,7 @@ class Grid
 	def draw
 		matrix_draw = ""
 		for i in 1..@width
+      matrix_draw+="<p>"
 			for j in 1..@height
         if @boats_matrix[j-1][i-1] == 0
 				  matrix_draw+=" _"
@@ -41,7 +42,7 @@ class Grid
              end
         end
       end
-      matrix_draw+= "<p>"
+      matrix_draw+= "</p>"
 		end
 		matrix_draw
   end

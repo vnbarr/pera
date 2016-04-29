@@ -23,4 +23,16 @@ class Grid
 	def boat_count
 		@boats_list.length
 	end
+
+	def draw
+		matrix_draw = ""
+		for i in 1..@width
+			for j in 1..@height
+				matrix_draw+=" _"
+			end
+			matrix_draw+= "<p>"
+
+		end
+		matrix_draw
+	end
 end

@@ -1,7 +1,11 @@
 require 'sinatra'
 require_relative './lib/grid.rb'
+require_relative './lib/boat.rb'
 
 @@grid = Grid.new
+boat = Boat.new
+
+@@grid.add_boat_on_position(1,1, boat)
 
 get '/' do
   erb :index

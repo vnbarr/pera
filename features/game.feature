@@ -5,8 +5,8 @@ Feature: Game Grid
     And I should see "grid"
     And I should see "_ _ _"
 
-#  Scenario: Enter coordinates
-#    Given Visit to homepage
-#    When Enter "1" as x coordinate and "2" as y coordinate
-#    Then I should see "_ _ _"
+  Scenario: Enter coordinates
+    Given Visit to homepage
+    When Enter 1 as x coordinate and 2 as y coordinate
+    Then I should see "_ _ _"
 

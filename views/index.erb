@@ -18,10 +18,10 @@
 <div id="grid-selector" name="grid">
 <%= @@grid.draw %>
 </div>
-<form action="/shoot" >
+<form method="post" action="/shoot" >
   x: <input type="text" name="x">
   y: <input type="text" name="y">
-  <input type="submit" name="Shoot" />
+  <input type="submit" value="Shoot" />
 
 </form>
 </body>

@@ -56,5 +56,4 @@ describe Grid do
 		was_a_hit = grid.bombard_position(2,2)
 		was_a_hit.should == false
     end
-
 end

@@ -46,7 +46,7 @@ describe Grid do
 		boat1 = Boat.new
 		grid.add_boat_on_position(2,2,boat1)
 		grid.bombard_position(2,2)
-		grid.is_game_over.should == true
+		grid.is_game_over.should == "you won"
 	end
 
 	it "should show you win when the last boat is destroyed" do
@@ -58,7 +58,7 @@ describe Grid do
 		grid.bombard_position(2,2)
 		grid.is_game_over.should == false
 		grid.bombard_position(0,1)
-		grid.is_game_over.should == true
+		grid.is_game_over.should == "you won"
 	end
 
 	it "should show 9 remaining bombs after one is used" do
@@ -82,7 +82,7 @@ describe Grid do
 		boat1 = Boat.new
 		grid.add_boat_on_position(2,2,boat1)
 		10.times { grid.bombard_position(2,0) }
-		grid.is_game_over.should == true
+		grid.is_game_over.should == "game over"
 	end
 
 	# it "should failed if dont hit a boat on position 2,2" do

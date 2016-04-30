@@ -65,10 +65,10 @@ class Grid
 
 	def is_game_over
 		if @floating_boats.length == 0
-			return true
+			return "you won"
 		end
 		if @bombs == 0
-			return true
+			return "game over"
 		end
 		return false
 	end

@@ -15,15 +15,30 @@
 <!--<script src="libs/zepto.js"></script>-->
 <!--<script src="libs/TweenMax.js"></script>-->
 <!--<script src="app.js"></script>-->
-<h1>Batalla Naval ÑOÑA</h1>
-<div id="grid-selector" name="grid">
-<%= @@grid.draw %>
-</div>
-<form method="post" action="/shoot" >
-  x: <input type="text" name="x">
-  y: <input type="text" name="y">
-  <input type="submit" value="Shoot" />
 
-</form>
+  <h1>Batalla Naval ÑOÑA</h1>
+
+  <% if not @@grid.is_game_over %>
+
+    <div id="grid-selector" name="grid">
+      <%= @@grid.draw %>
+    </div>
+
+    <div name="bombs-left"><%= @@grid.remaining_bombs %></div>
+
+    <form method="post" action="/shoot" >
+      x: <input type="text" name="x">
+      y: <input type="text" name="y">
+      <input type="submit" value="Shoot" />
+
+    </form>
+
+  <% else %>
+
+    <div name="game-over-message">game over</div>
+
+  <% end %>
+
 </body>
+
 </html>

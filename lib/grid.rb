@@ -3,8 +3,7 @@ require 'matrix.rb'
 #lala
 
 class Grid
-
-	def initialize
+  def initialize
 		@width = 3
 		@height = 3
 		@boats_list = []

@@ -8,5 +8,10 @@ Feature: Game Grid
   Scenario: Enter coordinates
     Given Visit to homepage
     When Enter 1 as x coordinate and 1 as y coordinate
-    Then I should see "<p> _ _ _</p><p> _ H _</p><p> _ _ _</p>"
+    Then I should see "game over"
+
+  Scenario: Test game over
+    Given Visit to homepage
+    When All bombs are used
+    Then I should see "game over"
 

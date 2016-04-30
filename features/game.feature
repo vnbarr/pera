@@ -8,7 +8,7 @@ Feature: Game Grid
   Scenario: Enter coordinates
     Given Visit to homepage
     When Enter 1 as x coordinate and 1 as y coordinate
-    Then I should see "game over"
+    Then I should see "you won"
 
   Scenario: Test game over
     Given Visit to homepage

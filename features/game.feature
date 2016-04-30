@@ -3,10 +3,10 @@ Feature: Game Grid
     Given Visit to homepage
     Then I should see "Batalla Naval"
     And I should see "grid"
-    And I should see "_ _ _"
+    And I should see "<p> _ _ _</p><p> _ _ _</p><p> _ _ _</p>"
 
   Scenario: Enter coordinates
     Given Visit to homepage
-    When Enter 1 as x coordinate and 2 as y coordinate
-    Then I should see "_ _ _"
+    When Enter 1 as x coordinate and 1 as y coordinate
+    Then I should see "<p> _ _ _</p><p> _ H _</p><p> _ _ _</p>"
 

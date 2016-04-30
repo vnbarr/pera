@@ -6,10 +6,10 @@
 </head>
 <body>
 <script>
-  var rubdata = {
-    width: <%= @@grid.get_width %>,
-    height: <%= @@grid.get_height %>
-  };
+//  var rubdata = {
+//    width: <%= $grid.get_width %>,
+//    height: <%= $grid.get_height %>
+//  };
 </script>
 
 <!--<script src="libs/zepto.js"></script>-->
@@ -18,13 +18,13 @@
 
   <h1>Batalla Naval ÑOÑA</h1>
 
-  <% if not @@grid.is_game_over %>
+  <% if not $grid.is_game_over %>
 
     <div id="grid-selector" name="grid">
-      <%= @@grid.draw %>
+      <%= $grid.draw %>
     </div>
 
-    <div name="bombs-left"><%= @@grid.remaining_bombs %></div>
+    <div name="bombs-left"><%= $grid.remaining_bombs %></div>
 
     <form method="post" action="/shoot" >
       x: <input type="text" name="x">
@@ -35,7 +35,7 @@
 
   <% else %>
 
-    <div name="game-over-message"><%= @@grid.is_game_over %></div>
+    <div name="game-over-message"><%= $grid.is_game_over %></div>
 
   <% end %>
 

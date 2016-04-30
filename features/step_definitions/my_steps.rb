@@ -1,3 +1,5 @@
+require_relative "../../lib/grid"
+
 Given(/^Visit to homepage$/) do
   visit "/"
 end
@@ -18,4 +20,8 @@ When(/^All bombs are used$/) do
     fill_in("y", :with => "0")
     click_button("Shoot")
   end
+end
+
+Then(/^I press restart$/) do
+  click_button("restart")
 end

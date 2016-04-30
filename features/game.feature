@@ -15,3 +15,8 @@ Feature: Game Grid
     When All bombs are used
     Then I should see "game over"
 
+  Scenario: Restart game
+    Given Visit to homepage
+    Then Enter 0 as x coordinate and 2 as y coordinate
+    And I press restart
+    Then I should see "<p> _ _ _</p><p> _ _ _</p><p> _ _ _</p>"

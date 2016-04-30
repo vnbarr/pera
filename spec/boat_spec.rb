@@ -16,4 +16,5 @@ describe Boat do
 		boat.receive_bomb
 		boat.is_floating.should == false
 	end
+
 end

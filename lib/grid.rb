@@ -10,6 +10,11 @@ class Grid
 		@boats_list = []
 		@boats_matrix = Array.new(3) { Array.new(3){0} }
 		@floating_boats = []
+		@bombs = 10
+	end
+
+	def remaining_bombs
+		@bombs
 	end
 
 	def get_width
@@ -59,6 +64,7 @@ class Grid
 	end
 
 	def bombard_position(row,column)
+		@bombs = @bombs - 1
 		if is_position_occupied(row,column)
 			@floating_boats.pop
 			return true
@@ -70,6 +76,9 @@ class Grid
 		if @floating_boats.length == 0
 			return true
 		end
-		return false	
+		if @bombs == 0
+			return true
+		end
+		return false
 	end
 end
